@@ -1,8 +1,19 @@
 jQuery(function(){
 
-    $.get('json/data.json',function(data,status){
-        console.log("Data: ",data)
-        console.log("Status: ",status)
+    $('#box').load("https://reqres.in/")
+
+    
+    $.get('https://reqres.in/api/users?page=2',function(response,status){
+        // console.log("Data: ",data)
+        // console.log("Status: ",status)
+        $('body').append(`<ul>`)
+        response.data.forEach(i=>{
+            
+            $('body').append(`<li>${i.email}</li>`)
+        })
+        $('body').append(`</ul>`)
+    })
+    $.get('json/data.json',function(data,status){        
 
         const table=$(`
         <table>
