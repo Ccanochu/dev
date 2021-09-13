@@ -30,9 +30,7 @@ function reloadStore(value){
     for (var i in localStorage) {        
         if (typeof localStorage[i] == 'string') {
             let as = $('a').val()
-            if (!as.find(n=>n==as)) {
-                $('#links').append('<li><a href="'+localStorage[i]+'"></a></li>') 
-            }
+            $('#links').append('<li><a href="'+localStorage[i]+'"></a></li>') 
         }        
     }
 }
