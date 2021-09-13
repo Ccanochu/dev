@@ -34,7 +34,36 @@ jQuery(function(){
         })
         table.attr("border","1")
         table.appendTo('body')
-    })    
+    })
+    
+
+    
+    $('#formulario').submit(function(e){
+        e.preventDefault();
+        var usuario = {
+            name:$('input[name="name"]').val(),
+            web:$('input[name="web"').val()
+        }
+        
+        $.ajax({
+            type:"POST",
+            url: $(this).attr("action"),
+            data: usuario,
+            beforeSend: function(){
+                console.log("Enviando datos...")
+            },
+
+            success: function(response){
+                console.log(response)
+            },
+            error: function(){
+                console.log("Ha ocurrido un error")
+            },
+            timeout: 3000
+        });
+
+        return false;
+    })
     
     
 })
