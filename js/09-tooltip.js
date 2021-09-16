@@ -1,5 +1,5 @@
 jQuery(function(){
-    $('h1').animate({marginLeft:'600px'},1500)
+    // $('h1').animate({marginLeft:'600px'},1500)
     $('.caja').animate({marginLeft:'100px'},2000)
 
     //mover los elementos
@@ -23,5 +23,10 @@ jQuery(function(){
         },
         content: "Awesome title!"
       });
+    $("#calender").datepicker()
+    $("#enviar").click(function(){
+      console.log($("#calender").val())
+    })  
+    $("#tabs").tabs()
     
 })
